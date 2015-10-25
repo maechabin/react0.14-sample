@@ -1,8 +1,6 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-// View
-
 var TestApp = React.createClass({
   getInitialState: function () {
     return {value: null};

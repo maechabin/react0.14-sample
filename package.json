@@ -9,10 +9,14 @@
   },
   "devDependencies": {
     "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "envify": "^3.4.0",
+    "uglify-js": "^2.5.0",
     "watchify": "^3.4.0"
   },
   "scripts": {
-    "watch": "watchify -t babelify ./src/app.js -o ./dist/build.js",
+    "watch": "NODE_ENV=development watchify -t babelify ./src/app.js -o ./dist/build.js",
+    "build": "NODE_ENV=production browserify ./src/app.js -t babelify -t envify | uglifyjs -c warnings=false > ./dist/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
