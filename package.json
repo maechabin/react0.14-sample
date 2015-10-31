@@ -15,7 +15,7 @@
     "watchify": "^3.4.0"
   },
   "scripts": {
-    "watch": "NODE_ENV=development watchify -t babelify ./src/app.js -o ./dist/build.js",
+    "watch": "NODE_ENV=development watchify -t babelify -t envify ./src/app.js -o ./dist/build.js",
     "build": "NODE_ENV=production browserify ./src/app.js -t babelify -t envify | uglifyjs -c warnings=false > ./dist/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
